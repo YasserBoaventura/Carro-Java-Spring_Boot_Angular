@@ -164,6 +164,7 @@ public class CarroController {
 			   return new ResponseEntity<>(lista,  HttpStatus.OK);
 		   }
 	   }catch(Exception e) {
+		     e.printStackTrace(); // para debug
 		   return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		   
 	   }

@@ -20,6 +20,6 @@ public interface CarroRepository extends JpaRepository<Carro, Long> {
 	@Query("FROM Carro c WHERE c.ano > :ano")
 	public List<Carro> findAnoAcima(@Param("ano") int ano);
 
-	//Metodo que faz a busca pornome da marca
-	public List<Carro> findByMarcasNome(MarcaS nome);
+	//Metodo que faz a busca por nome da marca
+	public List<Carro> findByMarcasNome(String nome);
 }

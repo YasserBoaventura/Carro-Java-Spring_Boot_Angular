@@ -95,13 +95,12 @@ public class CarroService {
 	public List<Carro> findAnoAcima(int ano){
 		
 		return this.carroRepository.findAnoAcima(ano);
-		
+		 
 	}
-	public List<Carro> findByMarcasNome(String NomeMarca){
-		MarcaS marcas=new MarcaS();
-		marcas.setNome(NomeMarca);
-		return this.carroRepository.findByMarcasNome(marcas);
-	}
+
+    public List<Carro> findByMarcasNome(String nomeMarca) {
+        return carroRepository.findByMarcasNome(nomeMarca);
+    }
   
 }
 
