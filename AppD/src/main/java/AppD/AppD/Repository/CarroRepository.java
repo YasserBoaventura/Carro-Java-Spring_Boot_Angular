@@ -16,9 +16,10 @@ public interface CarroRepository extends JpaRepository<Carro, Long> {
 	// Metodo que faz a consulta com o id da Marca passado por paramentro
 	public List<Carro> findByMarcas(MarcaS marcas);
 	
-	//Metodo que faz a Consultas por ano Maiores que o qno digidado o @RequestParam
+	//Metodo que faz a Consultas por ano Maiores que o ano digitado o @RequestParam
 	@Query("FROM Carro c WHERE c.ano > :ano")
 	public List<Carro> findAnoAcima(@Param("ano") int ano);
 
-	public List<Carro> findByMarcasNome(String nome);
+	//Metodo que faz a busca pornome da marca
+	public List<Carro> findByMarcasNome(MarcaS nome);
 }

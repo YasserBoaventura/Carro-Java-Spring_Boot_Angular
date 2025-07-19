@@ -146,13 +146,15 @@ public class CarroController {
   	        } else {
   	            return new ResponseEntity<>(lista, HttpStatus.OK); // 200
   	        }
-
+    
+  	        
   	    } catch (Exception e) {
   	        return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST); // 400
   	    }
   	}
+   
    //Metodo que retorna a lista dos carros de uma certa marca
-   @PostMapping("/findByMarcaNome")
+   @GetMapping("/findByMarcaNome")
    public ResponseEntity<List<Carro>> findByMarcasNome( @RequestParam String nomeMarca){
 	   try {
 		   List<Carro> lista = this.carroService.findByMarcasNome(nomeMarca); 
