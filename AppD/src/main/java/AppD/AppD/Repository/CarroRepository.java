@@ -21,12 +21,12 @@ public interface CarroRepository extends JpaRepository<Carro, Long> {
 	public List<Carro> findAnoAcima(@Param("ano") int ano);
 
 	//Metodo que faz a busca por nome da marca
+	public List<Carro> findByMarcasNome(String nome); 
 	
-	public List<Carro> findByMarcasNome(String nome);
-	
+	//Metodo que faz a busca dos carros pelo nome do propretario	
+public List<Carro> findByProprepariosNome(String nome);
 
-	public List<Carro> findByProprepariosNome(String nome);
-
+   
 	
 	
 }

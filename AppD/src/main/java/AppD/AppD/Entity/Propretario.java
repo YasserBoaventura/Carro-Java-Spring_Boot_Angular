@@ -29,5 +29,5 @@ public class Propretario {
 	@ManyToMany(mappedBy = "propreparios")
     @JsonIgnore
 	private List<Carro> carros;
-	
+	 
 }

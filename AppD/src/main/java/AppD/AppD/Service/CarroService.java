@@ -97,15 +97,17 @@ public class CarroService {
 		return this.carroRepository.findAnoAcima(ano);
 		 
 	}
-
+	
+   //Metodo que faz busca pelo nome marca
     public List<Carro> findByMarcasNome(String nomeMarca) {
         return this.carroRepository.findByMarcasNome(nomeMarca);
     }
     
+    //Metodo que faz a busca pelo nome do propretario
   public List<Carro> findByPropretarioNome(String nomePropretario){
 	  return this.carroRepository.findByProprepariosNome(nomePropretario);
   } 
-}
+} 
 
 	
 
