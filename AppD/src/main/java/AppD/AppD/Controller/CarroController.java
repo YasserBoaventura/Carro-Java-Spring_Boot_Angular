@@ -149,13 +149,15 @@ public class CarroController {
     
   	        
   	    } catch (Exception e) {
+  	    	 e.printStackTrace(); 
   	        return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST); // 400
+  	     
   	    }
   	}
    
    //Metodo que retorna a lista dos carros de uma certa marca
    @GetMapping("/findByMarcaNome")
-   public ResponseEntity<List<Carro>> findByMarcasNome( @RequestParam String nomeMarca){
+   public ResponseEntity<List<Carro>> findByMarcasNome(@RequestParam String nomeMarca){
 	   try {
 		   List<Carro> lista = this.carroService.findByMarcasNome(nomeMarca); 
 		   if(lista.isEmpty()) {
@@ -164,11 +166,26 @@ public class CarroController {
 			   return new ResponseEntity<>(lista,  HttpStatus.OK);
 		   }
 	   }catch(Exception e) {
-		     e.printStackTrace(); // para debug
+		     e.printStackTrace(); 
 		   return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 		   
 	   }
 	   
+	}
+   @GetMapping("/findByNomePropretario")
+   public ResponseEntity<List<Carro>> findByPropretarioNome(@RequestParam String  nomePropretario){
+	   try {
+		   List<Carro> lista=this.carroService.findByPropretarioNome(nomePropretario);
+		   if(lista.isEmpty()) {
+			   return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			   } else {
+				   return new ResponseEntity<>(lista, HttpStatus.OK);
+			   }
+		   
+	   }catch(Exception e) {
+		   e.printStackTrace();
+		   return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+	   }
 	   
    }
 }

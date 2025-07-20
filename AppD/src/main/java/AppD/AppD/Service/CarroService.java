@@ -99,9 +99,12 @@ public class CarroService {
 	}
 
     public List<Carro> findByMarcasNome(String nomeMarca) {
-        return carroRepository.findByMarcasNome(nomeMarca);
+        return this.carroRepository.findByMarcasNome(nomeMarca);
     }
-  
+    
+  public List<Carro> findByPropretarioNome(String nomePropretario){
+	  return this.carroRepository.findByProprepariosNome(nomePropretario);
+  } 
 }
 
 	

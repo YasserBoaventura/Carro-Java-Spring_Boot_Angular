@@ -28,8 +28,8 @@ import lombok.Setter;
 public class Carro {
 	   @Id
 	   @GeneratedValue(strategy = GenerationType.IDENTITY)
-      private Long id;
-      private int ano;
+       private Long id;
+       private int ano;
 	   private String nome;
 	   
 	   //Vamos usar o ManyTone quando o relacionamento muitos para um (Muitos carros podem ter uma marca)

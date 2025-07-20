@@ -11,7 +11,7 @@ import AppD.AppD.Entity.MarcaS;
 
 public interface CarroRepository extends JpaRepository<Carro, Long> {
 	
-	public List<Carro> findByNome(String nome);
+	public List<Carro> findByNome(String nome);  
 		
 	// Metodo que faz a consulta com o id da Marca passado por paramentro
 	public List<Carro> findByMarcas(MarcaS marcas);
@@ -21,5 +21,13 @@ public interface CarroRepository extends JpaRepository<Carro, Long> {
 	public List<Carro> findAnoAcima(@Param("ano") int ano);
 
 	//Metodo que faz a busca por nome da marca
+	
 	public List<Carro> findByMarcasNome(String nome);
+	
+
+	public List<Carro> findByProprepariosNome(String nome);
+
+	
+	
 }
+     
